@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+    </div>
+
+    <script>
+        var container = document.querySelector('#container');
+        var shadow = container.attachShadow({ mode: 'open' })
+
+        const header = document.createElement('h1');
+        header.textContent = "Hello World!";
+
+        const style = document.createElement('style');
+        style.innerHTML = `
+        * {
+            background-color: red;
+        }
+        `;
+
+
+        shadow.appendChild(header);
+        shadow.appendChild(style);
+        // document.body.appendChild(style);
+    </script>
+</body>
+</html>

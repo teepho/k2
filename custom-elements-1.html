@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <hello-world></hello-world>
+
+    <script>
+        // Create a class for the element
+        class HelloWorld extends HTMLElement {
+            constructor() {
+                // Always call super first in constructor
+                super();
+
+                // Create a shadow root
+                const shadow = this.attachShadow({ mode: 'open' });
+
+                shadow.textContent = 'Hello World';
+            }
+        }
+
+        // Define the new element
+        customElements.define('hello-world', HelloWorld);
+    </script>
+</body>
+
+</html>
